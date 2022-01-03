@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Admin-nouveau{% endblock %} 
+{% block contenu %}
+    <form method="POST" action="/admin-nouveau">
+        <div class="form-group m-4 w-25">
+            <label for="champ-titre">Titre de l'article</label>
+            <input type="text" class="form-control" id="champ-titre" placeholder="Titre" name='champ-titre' value={{request.form["champ-titre"]}}>
+        </div>     
+        <div class="form-group m-4 w-25">
+            <label for="champ-identifiant">Identifiant</label>
+            <input type="text" class="form-control" id="champ-identifiant" placeholder="Identifiant" name="champ-identifiant" value={{request.form["champ-identifiant"]}}>
+        </div>
+        <div class="form-group m-4 w-25">
+            <label for="champ-auteur">Auteur</label>
+            <input type="text" class="form-control" id="champ-auteur" placeholder="Auteur" name="champ-auteur" value={{request.form["champ-auteur"]}}>
+        </div>    
+        <div class="form-group m-4 w-25">
+            <label for="champ-date_publication">Date de publication</label>
+            <input type="text" class="form-control" id="champ-date_publication" placeholder="Date de publication" name="champ-date_publication" value={{request.form["champ-date_publication"]}}>
+        </div>
+        <div class="form-group m-4 w-25">
+            <label for="champ-paragraphe">Paragraphe</label>
+            <input type="text" class="form-control" id="champ-paragraphe" placeholder="Texte" name="champ-paragraphe" value={{request.form["champ-paragraphe"]}}>
+        </div>
+        <button type="submit" class="btn btn-primary m-4">Submit</button>
+      </form>
+    {% if champ_invalide %}
+      <div class="error-msg">{{ champ_invalide }}</div>
+    {% endif %}
+{% endblock %}

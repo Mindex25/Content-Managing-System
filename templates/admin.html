@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Articles{% endblock %}
+{% block contenu %}
+
+<a class="btn btn-primary p-3 mb-3 m-3" href={{ url_for('creer_nouveau') }} role="button">Créer un nouvel article</a>
+
+{% for article in articles %}
+<div class="card" style="width: 45%">
+  <div class="card-body">
+    <h5 class="card-title p-3 mb-3 bg-dark text-white">{{article[1]}}</h5>
+    <div class="row">
+      <div class="col-sm">
+        <h6 class="card-subtitle mb-2"><a href="/admin/modifier/{{article[0]}}">Éditer l'article</a></h6>
+      </div>
+      <div class="col-sm ">
+        <h6 class="card-subtitle mb-2 text-muted text-right">{{article[3]}}</h6>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

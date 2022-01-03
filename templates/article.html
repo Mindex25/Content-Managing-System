@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Article{% endblock %}
+{% block contenu %}
+
+<div class="card" style="width: 45%">
+    <div class="card-body">
+        <h5 class="card-title p-3 mb-3 bg-dark text-white">{{article[0]}}</h5>
+        <h6 class="card-subtitle mb-3 text-muted">{{article[1]}}</h6>
+        <p class="card-text">{{article[4]}}</p>
+        <div class="row">
+            <div class="col-sm">
+                <h6 class="card-subtitle mb-2 text-muted">{{article[2]}}</h6>
+            </div>
+            <div class="col-sm ">
+                <h6 class="card-subtitle mb-2 text-muted text-right">{{article[3]}}</h6>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

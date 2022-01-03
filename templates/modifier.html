@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Modifier un article{% endblock %}
+{% block contenu %}
+
+<form method="POST" action="/admin/modifier/{{article[0]}}">
+    {% if champ_invalide %}
+    <div class="error-msg">{{ champ_invalide }}</div>
+    {% endif %}
+    <div class="form-group">
+        <label for="champ-titre">Titre de l'article</label>
+        <input type="text" class="form-control" id="champ-titre" placeholder="Titre" name='champ-titre'
+            value={{request.form["champ-titre"]}}>
+    </div>
+    <div class="form-group">
+        <label for="champ-paragraphe">Paragraphe</label>
+        <input type="text" class="form-control" id="champ-paragraphe" placeholder="Texte" name="champ-paragraphe"
+            value={{request.form["champ-paragraphe"]}}>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}

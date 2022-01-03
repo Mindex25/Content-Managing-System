@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Résultats{% endblock %}
+{% block contenu %}
+
+{% for article in articles %}
+<div class="card mt-4" style="width: 45%">
+    <div class="card-body">
+        <h5 class="card-title p-3 mb-2"><a href="article/{{article[2]}}">{{article[0]}}</a></h5>
+        <h6 class="card-subtitle mb-3 text-muted text-right">{{article[1]}}</h6>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
