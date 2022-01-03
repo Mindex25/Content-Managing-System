@@ -1,4 +1,4 @@
-* Application de gestionnaire de contenu *
+# Application de gestionnaire de contenu
 
 Pour démarrer l'application, il suffit d'entrer la commande
 
